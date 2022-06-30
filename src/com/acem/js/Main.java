@@ -1,31 +1,35 @@
+package com.acem.js;
+
+import com.acem.js.ball.BasketBall;
+import com.acem.js.ball.Football;
+import com.acem.js.musicalinstrument.Guitar;
+import com.acem.js.musicalinstrument.Violine;
+
 public class Main {
-    public  static void main(String arg[]){
+    public  static void main(String args[]){
         String input = args[0];
-        Payable playable = null;
+        Playable playable = null;
         switch(input) {
-            Case "football":
-                playable=new Football();
+            case "football":
+                playable = new Football();
                 break;
-            case "basketball";
+            case "basketball":
                 playable = new BasketBall();
                 break;
-            case "Guitar";
+            case "Guitar":
                 playable = new Guitar();
                 break;
             case "violine":
                 playable = new Violine();
                 break;
             }
-            paly(playable);
+            play(playable);
         }
         public static void play(Playable playable){
             playable.play();
-            playable.kick();
             if (playable instanceof Football){
                 Football football = (Football) playable;
                 football.kick();
             }
         }
     }
-
-}
